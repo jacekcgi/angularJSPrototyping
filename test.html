@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="planes">
+    <head>
+      <title>Test</title>
+     <style>
+         table td {border-style: solid; border-width: 2px;}
+         table th {border-style: solid; border-width: 2px;} 
+     </style>
+    </head>
+    <body>
+            <div ng-controller="listPlanes">
+                <table>
+                    <tr>
+                    <th>plane name</th>
+                    <th>registration number</th>
+                    <th>create date</th>
+                    <th>update date</th>
+                    <th>description</th>
+                    </tr>
+                    <tr ng-repeat="plane in planeList">
+                        <td>{{plane.name}}</td>
+                        <td>{{plane.registration}}</td>
+                        <td>{{plane.create_date | date : "medium" }}</td>
+                        <td>{{plane.update_date | date : "medium" }}</td>
+                        <td>{{plane.description}}</td>
+                    </tr>
+                </table>  
+            </div> 
+        <div ng-controller="showSomething">
+            
+            <a href="#lala" ng-click='go()'>Click me</a>
+            
+        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="get_planes_list.js"></script>
+<script src="services.js"></script>
+    </body>
+</html>

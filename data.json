@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "name": "plane 8889",
+        "registration": "Miciazok",
+        "description": "palne fyling",
+        "create_date": 1487246646000,
+        "update_date": 1487246646000
+    },
+    {
+        "id": 2,
+        "name": "plane 234",
+        "registration": "Maniok",
+        "description": "palne 400",
+        "create_date": 1487246646000,
+        "update_date": 1492340646000
+    },
+    {
+        "id": 3,
+        "name": "plane 34566",
+        "registration": "luftHanza6",
+        "description": "palne 60",
+        "create_date": 1487246886000,
+        "update_date": 1487246886000
+    },
+    {
+        "id": 3,
+        "name": "plane 6",
+        "registration": "luftHanza6",
+        "description": "palne 7",
+        "create_date": 1487246886000,
+        "update_date": 1487246886000
+    }
+
+]
