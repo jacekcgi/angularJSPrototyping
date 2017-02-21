@@ -1,23 +1,17 @@
-planes.service("getAllPlanesDataService", ["$http", "$log","$rootScope", function ($http, $log,$rootScope) {
+planes.service("getAllPlanesDataService", ["$http", "$log", "$rootScope", function ($http, $log, $rootScope) {
 
-    var sharedData = {};
-    
-    sharedData.values = {};
-    
+    var allPlanesData = {};
+
+    allPlanesData.values = {};
+
     this.allPlanes = function getAllPlanes(callback) {
         $http.get('data.json').
-            then(function successResponse(response) {
-            
-            //sharedData.values = callback(response.data);
-            
+        then(function successResponse(response) {
             callback(response.data);
-            
-           //  sharedData.values = response.data;
-             $rootScope.$broadcast('dataPassed');
-            
-            // console.log("servide: "+ sharedData.values);
-            }, function errorResponse(response) {
-                $log.error('database not connected');
-            });
+            $rootScope.$broadcast('planesDataPassed');
+
+        }, function errorResponse(response) {
+            $log.error('database not connected');
+        });
     };
 }]);
