@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="planes">
-    <head>
-      <title>Test</title>
-     <style>
-         table td {border-style: solid; border-width: 2px;}
-         table th {border-style: solid; border-width: 2px;} 
-     </style>
-    </head>
-    <body>
-            <div ng-controller="listPlanes">
-                <table>
-                    <tr>
+
+<head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/planeAndPlaneDetails.css" rel="stylesheet" />
+    <title>Test</title>
+
+</head>
+
+<body>
+    <div id="container" ng-controller="listPlanes">
+        <div id="left">
+            <table class="table table-striped table-hover">
+                <tr>
                     <th>plane name</th>
                     <th>registration number</th>
                     <th>create date</th>
                     <th>update date</th>
                     <th>description</th>
-                    </tr>
-                    <tr ng-repeat="plane in planeList">
-                        <td>{{plane.name}}</td>
-                        <td>{{plane.registration}}</td>
-                        <td>{{plane.create_date | date : "medium" }}</td>
-                        <td>{{plane.update_date | date : "medium" }}</td>
-                        <td>{{plane.description}}</td>
-                    </tr>
-                </table>  
-            </div> 
-        <div ng-controller="showSomething">
-            
-            <a href="#lala" ng-click='go()'>Click me</a>
-            
+                </tr>
+                <tr ng-repeat="plane in planeList">
+                    <td>{{plane.name}}</td>
+                    <td>{{plane.registration}}</td>
+                    <td>{{plane.create_date | date : "medium" }}</td>
+                    <td>{{plane.update_date | date : "medium" }}</td>
+                    <td>{{plane.description}}</td>
+                    <td>
+                        <button id_plane="{{plane.id}}" ng-click="showFlightDetails($event)">more info</button>
+                    </td>
+                </tr>
+
+            </table>
         </div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-<script src="get_planes_list.js"></script>
-<script src="services.js"></script>
-    </body>
+        <div id="#right" ng-hide="flightDetails == null">
+            <table class="table-condensed table-striped table-hover">
+                <th>Flight details : {{flightDetails.plane.name}}</th>
+                <tr>
+                    <td>Gps Latitude</td>
+                    <td>{{flightDetails.gpsLatitude}}</td>
+                </tr>
+                <tr>
+                    <td>Gps Longitude</td>
+                    <td>{{flightDetails.gpsLongitude}}</td>
+                </tr>
+                <tr>
+                    <td>Fuel Consumption</td>
+                    <td>{{flightDetails.averageFuelConsumption}}</td>
+                </tr>
+                <tr>
+                    <td>Course</td>
+                    <td>{{flightDetails.course}}</td>
+                </tr>
+                <tr>
+                    <td>Incoming time</td>
+                    <td>{{flightDetails.incomingTime}}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+<!--
+    <div ng-controller="showSomething">
+
+        <a href="#lala" ng-click='go()'>Click me</a>
+
+    </div>
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="get_planes_list.js"></script>
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="services.js"></script>
+</body>
+
 </html>

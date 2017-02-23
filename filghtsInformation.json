@@ -1,0 +1,18 @@
+{
+    "id": 1,
+    "gpsLatitude": "17",
+    "gpsLongitude": "51",
+    "course": 15,
+    "velocity": null,
+    "averageFuelConsumption": null,
+    "incomingTime": null,
+    "plane": {
+        "id": 1,
+        "name": "plane 1",
+        "registration": "luftHanza2",
+        "description": "plane fyling",
+        "create_date": 1487246646000,
+        "update_date": 1487246646000
+    },
+    "actualPosition": true
+}
